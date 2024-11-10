@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
@@ -18,12 +19,28 @@
             scroll-behavior: smooth;
         }
         body {
-            background-color: rgb(173, 167, 167);
+            background-color: #f8f9fa;
             font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa; /* A light grey for better readability */
-    color: #212529; /* Dark text */
+            color: #212529;
+            overflow-x: hidden;
         }
-        
+        .navbar-brand, .nav-link {
+            transition: color 0.3s ease;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #007bff !important;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards ease-in-out;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 .btn {
     transition: all 0.3s ease;
 }
@@ -51,7 +68,12 @@ h1, h4 {
             .navbar .container, .container, .row {
                 text-align: center;
             }
-
+            .navbar-brand {
+                padding-left: 30px;
+            }
+            .navbar-collapse{
+                padding-right: 30px;
+            }
             .image1 {
                 margin: 0 auto; /* Center the image horizontally */
             }
@@ -90,7 +112,7 @@ h1, h4 {
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-transparent fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="height: 80px;">
         <div class="container">
             <a class="navbar-brand" href="#home">Nicole Dizon</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -106,11 +128,11 @@ h1, h4 {
             </div>
         </div>
     </nav>
-    <section id="home">
+    <section id="home" class="fade-in">
         <div class="container mt-5 pt-5">
             <div class="row">
                 <div class="col-sm d-flex justify-content-center">
-                    <img class="rounded-circle image1 mt-3" src="./myimage.jpg" alt="myimage" style="width: 50%; height: auto;">
+                    <img class="img-fluid rounded-5 shadow image1 mt-5" src="./myimage.jpg" alt="myimage" style="width: 50%; height: auto;">
                 </div>
                 <div class="col-sm-5 mt-5 text-center text-sm-start">
                     <h4 class="text-secondary fw-bold">Hello I'm</h4>
@@ -136,7 +158,7 @@ h1, h4 {
             </div>
         </div>
     </section>
-    <section id="about">
+    <section id="about" class="fade-in">
         <div class="container mt-5">
             <h4 class="text-center text-secondary fw-bold">Get to Know Me More</h4>
             <h1 class="text-center text-dark fw-bold mt-3">About Me</h1>
@@ -174,47 +196,27 @@ h1, h4 {
             </p>
         </div>
     </section>
-    <section id="skills">
-        <h4 class="text-center text-secondary fw-bold mt-3">Explore My</h4>
+    <section id="skills" class="fade-in">
+        <div class="container mt-5 bg-light rounded-4">
+        <h4 class="text-center text-secondary fw-bold">Explore My</h4>
         <h1 class="text-center text-dark fw-bold mb-3">Skills</h1>
-        <div class="container mb-5 mt-5 bg-light rounded-4">
             <div class="row">
                 <div class="col">
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Computer Literate</h5>
-                    <p>Experienced</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> HTML</h5>
+                    <h5 class="text-dark mt-5"><i class="fab fa-html5"></i> HTML</h5>
                     <p>Skilled</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> CSS</h5>
+                    <h5 class="text-dark mt-5"><i class="fab fa-css3-alt"></i> CSS</h5>
                     <p>Experienced</p>
                 </div>
                 <div class="col">
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> SQL</h5>
+                    <h5 class="text-dark mt-5"><i class="fas fa-database"></i> SQL</h5>
                     <p>Skilled</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Excel</h5>
-                    <p>Experienced</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Organizational</h5>
-                    <p>Skilled</p>
-                </div>
-                <div class="col">
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Analyzational</h5>
-                    <p>Skilled</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Detail-Oriented</h5>
-                    <p>Experienced</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Memorization</h5>
-                    <p>Skilled</p>
-                </div>
-                <div class="col">
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Critical Thinking</h5>
-                    <p>Skilled</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Problem Solving</h5>
-                    <p>Experienced</p>
-                    <h5 class="text-dark mt-5"><i class="fas fa-check-circle"></i> Communication</h5>
+                    <h5 class="text-dark mt-5"><i class="fas fa-file-excel"></i> Excel</h5>
                     <p>Experienced</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="project">
+    <section id="project" class="fade-in">
         <div class="container mt-5">
             <h4 class="text-center text-secondary fw-bold">Browse My</h4>
             <h1 class="text-center text-dark fw-bold mt-3">Projects</h1>
@@ -252,7 +254,7 @@ h1, h4 {
             </div>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <div class="container mt-5">
             <h4 class="text-center text-secondary fw-bold">Let's Get In Touch</h4>
             <h1 class="text-center text-dark fw-bold mt-3">Contact Me</h1>
